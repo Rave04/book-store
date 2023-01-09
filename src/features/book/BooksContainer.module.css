@@ -1,0 +1,10 @@
+.booksContainer {
+  width: 80%;
+  margin: 10px;
+}
+
+.selectedCategory {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}

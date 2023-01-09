@@ -1,0 +1,7 @@
+.mainPage {
+  width: 100%;
+  display: flex;
+  max-width: 1700px;
+  background-color: white;
+  margin: 0 auto;
+}

@@ -1,0 +1,24 @@
+.navigation {
+  display: flex;
+  color: white;
+  line-height: 10vh;
+}
+
+.navigation p {
+  margin-right: 40px;
+}
+
+.navigation p:hover {
+  color: lightgray;
+}
+
+@media (max-width: 700px) {
+  .navigation {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+  }
+  .navigation p {
+    margin: 0 20px;
+  }
+}
