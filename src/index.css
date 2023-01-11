@@ -8,3 +8,85 @@
 body {
   background-color: rgb(245, 245, 245);
 }
+
+form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.formAction {
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.formAction select {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.cardForm {
+  position: absolute;
+  margin-top: 8vh;
+  width: 70%;
+  height: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(252, 252, 252);
+  max-width: 700px;
+}
+
+form textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 80px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+form button {
+  padding: 10px;
+  margin: 15px 0 15px auto;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px 5px;
+  color: white;
+  border: 1px solid black;
+  text-shadow: 1px 1px black;
+  background: rgb(230, 91, 40);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 91, 40, 1) 0%,
+    rgba(255, 135, 37, 1) 100%
+  );
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+p.errorMessage {
+  color: red;
+  width: 80%;
+  text-align: center;
+  margin: 10px auto;
+}

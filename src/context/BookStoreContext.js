@@ -1,33 +1,68 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 const BookStoreContext = createContext();
 
 const BookStoreProvider = ({ children }) => {
-  const [books, setBooks] = useState([
-    { id: 0, title: "Steve Jobs", category: "Biografia" },
-    { id: 1, title: "Wiedźmin", category: "Fantasy" },
-    { id: 3, title: "Gra o tron", category: "Fantasy" },
-    { id: 4, title: "Kubuś Puchatek", category: "Dla dzieci" },
-    { id: 5, title: "Metro 2023", category: "Sci Fi" },
-  ]);
+  const [books, setBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState(
+    books.map((book) => ({ ...book }))
+  );
+  const [category, setCategory] = useState("");
 
-  const [category, setCategory] = useState(" ");
+  const changeCategory = (e, mobile, name = "") => {
+    if (mobile) {
+      setCategory(e.target.value);
+    } else {
+      name === "Wszystkie" ? setCategory("") : setCategory(name);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
-  const [filteredBooks, setFilteredBooks] = useState(books);
+  const filterBooks = () => {
+    setFilteredBooks(books.filter((book) => book.category.includes(category)));
+  };
+
+  useEffect(() => {
+    filterBooks();
+  }, [category]);
+
+  const [cart, setCart] = useState([]);
+
+  const width = useWindowWidth();
+  const categories = [
+    "Fantasy",
+    "Sci-fi",
+    "Horror",
+    "Klasyka",
+    "Kryminał",
+    "Sensacja",
+    "Młodzieżowe",
+    "Historyczne",
+    "Przygodowe",
+    "Romans",
+    "Biografia",
+    "Inne",
+  ];
 
   return (
-    <BookStoreProvider
+    <BookStoreContext.Provider
       value={{
         books,
         setBooks,
-        category,
-        setCategory,
         filteredBooks,
         setFilteredBooks,
+        category,
+        changeCategory,
+        filterBooks,
+        categories,
+        cart,
+        setCart,
+        width,
       }}
     >
       {children}
-    </BookStoreProvider>
+    </BookStoreContext.Provider>
   );
 };
 

@@ -11,7 +11,6 @@ const Header = () => {
           <h1>Book Store</h1>
         </div>
       </Link>
-
       <Nav />
     </header>
   );

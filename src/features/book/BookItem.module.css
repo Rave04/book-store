@@ -1,5 +1,69 @@
 .bookItem {
+  display: flex;
+  flex-direction: column;
   width: 300px;
   height: 300px;
   margin: 30px 30px;
+  background-color: #eccbb5;
+  overflow: hidden;
+}
+
+.bookImageContainer {
+  position: relative;
+  height: 70%;
+}
+
+.bookImageContainer span {
+  position: absolute;
+  font-weight: bold;
+  font-size: 30px;
+  color: #1d2942;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+.bookImageContainer span:hover::before {
+  content: "Dodaj do koszyka";
+  font-size: 18px;
+  color: white;
+  z-index: 100;
+  color: #1d2942;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid #1d2942;
+  margin-right: 5px;
+}
+
+.bookImageContainer img {
+  width: 40%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+}
+
+.bookInfo {
+  background-color: white;
+  height: 30%;
+}
+.bookItem p {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.bookTitle {
+  width: 100%;
+  color: white;
+  text-shadow: 2px 2px black;
+  padding: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(230, 91, 40, 1) 0%,
+    rgba(255, 135, 37, 1) 100%
+  );
+  font-size: 20px;
+  margin-bottom: 10px;
 }

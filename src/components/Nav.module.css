@@ -1,7 +1,6 @@
 .navigation {
   display: flex;
   color: white;
-  line-height: 10vh;
 }
 
 .navigation p {
@@ -12,13 +11,29 @@
   color: lightgray;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .navigation {
     position: relative;
     width: 100%;
-    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    justify-content: space-between;
+    top: -50px;
+
+    height: 60%;
   }
-  .navigation p {
-    margin: 0 20px;
+
+  .navigation a {
+    margin: 0 auto;
+  }
+
+  .navigation a p {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .navigation {
+    font-size: 15px;
   }
 }
