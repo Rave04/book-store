@@ -1,12 +1,13 @@
 import { useRef, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import usePermissions from "../../hooks/usePermissions";
 import Card from "../../components/UI/Card";
-import { auth } from "../../firebase";
-import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import Button from "../../components/UI/Button";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
+  const { register } = useContext(AuthContext);
   const usernameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -17,13 +18,13 @@ const RegisterForm = () => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    try {
-      const user = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(user);
-    } catch (error) {
-      alert("Rejestracja nie powiodła się!");
+    if (email.trim() === "" || password.trim() === "" || password.length < 6) {
+      alert(
+        "Email i hasło nie mogą być puste, hasło musi mieć conajmniej 6 znaków!"
+      );
       return;
     }
+    register(email, password);
     navigate("/");
     alert("Zarejestrowano pomyślnie!");
   };
@@ -31,18 +32,18 @@ const RegisterForm = () => {
     <Card className="cardForm">
       <form onSubmit={handleRegister}>
         <div className="formAction">
-          <label>Nazwa użytkownika</label>
-          <input ref={usernameRef} type="text" />
+          <label htmlFor="username">Nazwa użytkownika</label>
+          <input ref={usernameRef} id="username" type="text" />
         </div>
         <div className="formAction">
-          <label>Email</label>
-          <input ref={emailRef} type="email" />
+          <label htmlFor="registerEmail">Email</label>
+          <input ref={emailRef} id="registerEmail" type="email" />
         </div>
         <div className="formAction">
-          <label>Hasło</label>
-          <input ref={passwordRef} type="password" />
+          <label htmlFor="registerPassword">Hasło</label>
+          <input ref={passwordRef} id="registerPassword" type="password" />
         </div>
-        <button type="submit">Zarejestruj się</button>
+        <Button type="submit">Zarejestruj się</Button>
       </form>
     </Card>
   );

@@ -1,21 +1,7 @@
 .categoryItem {
   width: 60%;
-  border-radius: 20px 20px;
+  border-radius: 15px 15px;
   border: 2px solid black;
-  margin: 15px auto;
-  background: rgb(230, 91, 40);
-  background: linear-gradient(
-    90deg,
-    rgba(230, 91, 40, 1) 0%,
-    rgba(255, 135, 37, 1) 100%
-  );
-  text-shadow: 1px 1px black;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.categoryItem:hover {
-  opacity: 0.9;
 }
 
 .categoryItem p {

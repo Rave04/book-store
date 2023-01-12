@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { BookStoreContext } from "../../context/BookStoreContext";
-import styles from "./BooksContainer.module.css";
 import BookList from "./BookList";
+import styles from "./BooksContainer.module.css";
 
 const BooksContainer = () => {
   const { category } = useContext(BookStoreContext);

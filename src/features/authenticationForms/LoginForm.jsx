@@ -1,14 +1,15 @@
-import { useRef, useContext, useEffect } from "react";
+import { useRef, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase-config";
 import { AuthContext } from "../../context/AuthContext";
 import usePermissions from "../../hooks/usePermissions";
 import Card from "../../components/UI/Card";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
-import { useNavigate } from "react-router-dom";
+import Button from "../../components/UI/Button";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const { user, setUser } = useContext(AuthContext);
+  const { user, login } = useContext(AuthContext);
   const emailRef = useRef();
   const passwordRef = useRef();
 
@@ -22,7 +23,7 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
-      setUser(user);
+      login(user);
       navigate("/");
       alert("Zalogowano pomyślnie!");
     } catch (error) {
@@ -34,14 +35,14 @@ const LoginForm = () => {
     <Card className="cardForm">
       <form onSubmit={handleLogin}>
         <div className="formAction">
-          <label>Email</label>
-          <input ref={emailRef} type="email" />
+          <label htmlFor="loginEmail">Email</label>
+          <input ref={emailRef} id="loginEmail" type="email" />
         </div>
         <div className="formAction">
-          <label>Hasło</label>
-          <input ref={passwordRef} type="password" />
+          <label htmlFor="loginPassword">Hasło</label>
+          <input ref={passwordRef} id="loginPassword" type="password" />
         </div>
-        <button>Zaloguj się</button>
+        <Button type="submit">Zaloguj się</Button>
       </form>
     </Card>
   );

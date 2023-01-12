@@ -17,21 +17,5 @@
 
 .completeOrder {
   padding: 10px 15px;
-  margin-bottom: 20px;
-  border-radius: 5px 5px;
-  border: 1px solid black;
-  background: rgb(230, 91, 40);
-  background: linear-gradient(
-    90deg,
-    rgba(230, 91, 40, 1) 0%,
-    rgba(255, 135, 37, 1) 100%
-  );
-  cursor: pointer;
-  font-weight: bold;
-  color: white;
-  text-shadow: 1px 1px black;
-  transition: 0.2s;
 }
-.completeOrder:hover {
-  opacity: 0.8;
-}
+

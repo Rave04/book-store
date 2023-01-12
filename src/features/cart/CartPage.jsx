@@ -1,9 +1,10 @@
+import { useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { BookStoreContext } from "../../context/BookStoreContext";
 import Card from "../../components/UI/Card";
+import Button from "../../components/UI/Button";
 import CartList from "./CartList";
 import styles from "./CartPage.module.css";
-import { useContext, useState, useEffect } from "react";
-import { BookStoreContext } from "../../context/BookStoreContext";
-import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const [cartValue, setCartValue] = useState(0);
@@ -27,6 +28,7 @@ const CartPage = () => {
     alert("Zamówienie zostało złożone pomyślnie!");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   return (
     <Card className={styles.cartContainer}>
       <h3>Twój koszyk</h3>
@@ -34,12 +36,12 @@ const CartPage = () => {
         <>
           <CartList />
           <p>Pełna wartość koszyka: {cartValue.toFixed(2)}zł</p>
-          <button
+          <Button
             onClick={handleCompleteOrder}
             className={styles.completeOrder}
           >
             Zamów
-          </button>
+          </Button>
         </>
       ) : (
         <p>Koszyk jest pusty!</p>

@@ -4,10 +4,9 @@ import CartItem from "./CartItem";
 import styles from "./CartList.module.css";
 
 const CartList = () => {
-  const { cart, setCart, width } = useContext(BookStoreContext);
+  const { cart, setCart } = useContext(BookStoreContext);
 
   const handleRemoveFromCart = (item) => {
-    console.log(cart);
     setCart((prevCart) =>
       prevCart.filter((book) => book.cartItemId !== item.cartItemId)
     );

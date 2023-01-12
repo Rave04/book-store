@@ -5,10 +5,10 @@ const CartItem = ({ book, onRemoveFromCart }) => {
   const { image, title, author, price, description } = book;
   return (
     <Card className={styles.cartItem}>
-      <div class={styles.itemImageContainer}>
+      <div className={styles.itemImageContainer}>
         {image ? <img src={image} /> : <img src="book.png" />}
       </div>
-      <div class={styles.itemInfo}>
+      <div className={styles.itemInfo}>
         <p>{title}</p>
         <p>Autor: {author}</p>
         <p>Cena: {price}zł</p>

@@ -1,15 +1,18 @@
-import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import styles from "./Nav.module.css";
 import { BookStoreContext } from "../context/BookStoreContext";
+import styles from "./Nav.module.css";
+
 const Nav = () => {
-  const { user, setUser } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const { cart } = useContext(BookStoreContext);
+
   const handleLogout = () => {
-    setUser(null);
+    logout();
     alert("Wylogowano pomyślnie");
   };
+
   return (
     <nav className={styles.navigation}>
       <Link to="/cart">

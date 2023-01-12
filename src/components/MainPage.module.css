@@ -1,8 +1,13 @@
 .mainPage {
   width: 100%;
   max-width: 1700px;
-  min-height: 100vh;
   display: flex;
   background-color: white;
   margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .mainPage {
+    flex-direction: column-reverse;
+  }
 }

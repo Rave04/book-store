@@ -1,7 +1,7 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { BookStoreContext } from "../../context/BookStoreContext";
-import styles from "./CategoryList.module.css";
 import CategoryItem from "./CategoryItem";
+import styles from "./CategoryList.module.css";
 
 const CategoryList = () => {
   const { categories, changeCategory, width } = useContext(BookStoreContext);
@@ -20,7 +20,7 @@ const CategoryList = () => {
         <div className={styles.categoryListMobile}>
           <h3>Kategoria</h3>
           <select onChange={(e) => changeCategory(e, true)}>
-            <option></option>
+            <option value="">Wszystkie</option>
             {categories.map((category) => (
               <option key={category} value={category}>
                 {category}

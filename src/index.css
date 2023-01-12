@@ -63,27 +63,6 @@ form textarea {
   padding: 5px;
 }
 
-form button {
-  padding: 10px;
-  margin: 15px 0 15px auto;
-  outline: none;
-  cursor: pointer;
-  border-radius: 5px 5px;
-  color: white;
-  border: 1px solid black;
-  text-shadow: 1px 1px black;
-  background: rgb(230, 91, 40);
-  background: linear-gradient(
-    90deg,
-    rgba(230, 91, 40, 1) 0%,
-    rgba(255, 135, 37, 1) 100%
-  );
-}
-
-form button:hover {
-  opacity: 0.8;
-}
-
 p.errorMessage {
   color: red;
   width: 80%;

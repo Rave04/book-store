@@ -1,6 +1,6 @@
-import styles from "./MainPage.module.css";
-import CategoryList from "../features/category/CategoryList";
 import BooksContainer from "../features/book/BooksContainer";
+import CategoryList from "../features/category/CategoryList";
+import styles from "./MainPage.module.css";
 
 const MainPage = () => {
   return (

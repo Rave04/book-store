@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import useWindowWidth from "../hooks/useWindowWidth";
 
-const BookStoreContext = createContext();
+const BookStoreContext = createContext({});
 
 const BookStoreProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
@@ -29,7 +29,6 @@ const BookStoreProvider = ({ children }) => {
 
   const [cart, setCart] = useState([]);
 
-  const width = useWindowWidth();
   const categories = [
     "Fantasy",
     "Sci-fi",
@@ -45,6 +44,9 @@ const BookStoreProvider = ({ children }) => {
     "Inne",
   ];
 
+  const width = useWindowWidth();
+ 
+  
   return (
     <BookStoreContext.Provider
       value={{

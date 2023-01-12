@@ -1,14 +1,14 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { BookStoreContext } from "../../context/BookStoreContext";
 import useFetch from "../../hooks/useFetch";
-import styles from "./BookList.module.css";
 import BookItem from "./BookItem";
 import { API_URL } from "../../config";
+import styles from "./BookList.module.css";
 
 const BookList = () => {
   const { books, setBooks, filteredBooks, setFilteredBooks } =
     useContext(BookStoreContext);
-  const [isLoading, fetchError, sendRequest] = useFetch();
+  const { isLoading, sendRequest } = useFetch();
 
   const addBooks = (booksObject) => {
     const loadedBooks = [];
@@ -47,7 +47,7 @@ const BookList = () => {
   return (
     <div className={styles.bookList}>
       {!filteredBooks.length && !isLoading && (
-        <p>Brak książek dla podanej kategorii</p>
+        <p>Brak książek w podanej kategorii</p>
       )}
       {isLoading && <p>Ładowanie</p>}
       {filteredBooks.map((book) => (

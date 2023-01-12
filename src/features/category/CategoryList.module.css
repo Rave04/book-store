@@ -7,6 +7,17 @@
   text-align: center;
 }
 
+.categoryListMobile {
+  display: flex;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  justify-content: space-between;
+  margin: 20px 0;
+  text-align: center;
+}
+
 .categoryList .categoryListMobile h3 {
   text-align: center;
 }
