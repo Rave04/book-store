@@ -3,7 +3,11 @@ React Book Store is a web application developed using the React library, simulat
 
 Application allows registration of new users and login. Logged in user, in addition to purchasing, also has ability to add books.
 
-Application uses Firebase for data storage and authentication
+Application uses Firebase for data storage and authentication.
+
+Sample login credentials:
+email: admin@admin.pl
+password: haslo123
 
 ## Demo
 
