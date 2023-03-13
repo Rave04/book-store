@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCQab8IVC-4Q3_8unaMMFXwBq85CHXpTDI",
+  apiKey: "BDX3M-GalCMXJi4Qdhfe-l78Xcfk2RRPzoS2W5z_RKUOd5wMThlAc3h3Fv_JgP_QqEhc3ebANn0Sojawjz93U7QI",
   authDomain: "react-bookstore-6ac6e.firebaseapp.com",
   databaseURL: "https://react-bookstore-6ac6e-default-rtdb.firebaseio.com",
   projectId: "react-bookstore-6ac6e",
